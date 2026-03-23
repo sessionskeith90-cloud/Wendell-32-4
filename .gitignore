@@ -1,0 +1,9 @@
+/target
+**/*.pyc
+__pycache__/
+*.log
+*.bak
+Cargo.lock
+.idea/
+.vscode/
+venv/

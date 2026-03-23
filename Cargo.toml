@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "hia",
+    "hia_shadow",
+    "wendell",
+    "agents",
+    "dashboard",
+    "dashboard_shadow"
+]
+resolver = "2"
