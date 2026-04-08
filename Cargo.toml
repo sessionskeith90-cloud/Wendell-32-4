@@ -1,0 +1,145 @@
+[package]
+name = "wendell-core-33"
+version = "3.2.4"
+edition = "2021"
+description = "Dual-orchestrator forensic intelligence platform with 32 agents"
+license = "Proprietary"
+
+# ── Primary agents ──────────────────────────────────────────────
+[[bin]]
+name = "agent01"
+path = "agents/agent01.rs"
+
+[[bin]]
+name = "agent02"
+path = "agents/agent02.rs"
+
+[[bin]]
+name = "agent03"
+path = "agents/agent03.rs"
+
+[[bin]]
+name = "agent04"
+path = "agents/agent04.rs"
+
+[[bin]]
+name = "agent05"
+path = "agents/agent05.rs"
+
+[[bin]]
+name = "agent06"
+path = "agents/agent06.rs"
+
+[[bin]]
+name = "agent07"
+path = "agents/agent07.rs"
+
+[[bin]]
+name = "agent08"
+path = "agents/agent08.rs"
+
+[[bin]]
+name = "agent09"
+path = "agents/agent09.rs"
+
+[[bin]]
+name = "agent10"
+path = "agents/agent10.rs"
+
+[[bin]]
+name = "agent11"
+path = "agents/agent11.rs"
+
+[[bin]]
+name = "agent12"
+path = "agents/agent12.rs"
+
+[[bin]]
+name = "agent13"
+path = "agents/agent13.rs"
+
+[[bin]]
+name = "agent14"
+path = "agents/agent14.rs"
+
+[[bin]]
+name = "agent15"
+path = "agents/agent15.rs"
+
+[[bin]]
+name = "agent16"
+path = "agents/agent16.rs"
+
+# ── Shadow agents ───────────────────────────────────────────────
+[[bin]]
+name = "agent02_shadow"
+path = "agents/agent02_shadow.rs"
+
+[[bin]]
+name = "agent03_shadow"
+path = "agents/agent03_shadow.rs"
+
+[[bin]]
+name = "agent04_shadow"
+path = "agents/agent04_shadow.rs"
+
+[[bin]]
+name = "agent05_shadow"
+path = "agents/agent05_shadow.rs"
+
+[[bin]]
+name = "agent06_shadow"
+path = "agents/agent06_shadow.rs"
+
+[[bin]]
+name = "agent07_shadow"
+path = "agents/agent07_shadow.rs"
+
+[[bin]]
+name = "agent08_shadow"
+path = "agents/agent08_shadow.rs"
+
+[[bin]]
+name = "agent09_shadow"
+path = "agents/agent09_shadow.rs"
+
+[[bin]]
+name = "agent10_shadow"
+path = "agents/agent10_shadow.rs"
+
+[[bin]]
+name = "agent11_shadow"
+path = "agents/agent11_shadow.rs"
+
+[[bin]]
+name = "agent13_shadow"
+path = "agents/agent13_shadow.rs"
+
+[[bin]]
+name = "agent14_shadow"
+path = "agents/agent14_shadow.rs"
+
+[[bin]]
+name = "agent15_shadow"
+path = "agents/agent15_shadow.rs"
+
+[[bin]]
+name = "agent16_shadow"
+path = "agents/agent16_shadow.rs"
+
+# ── Core orchestrators ──────────────────────────────────────────
+[[bin]]
+name = "hia"
+path = "agents/hia.rs"
+
+[[bin]]
+name = "hia_shadow"
+path = "agents/hia_shadow.rs"
+
+[[bin]]
+name = "afia"
+path = "agents/afia.rs"
+
+[[bin]]
+name = "afia_shadow"
+path = "agents/afia_shadow.rs"

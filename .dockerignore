@@ -1,0 +1,11 @@
+.git
+.github
+target
+__pycache__
+*.pyc
+*.log
+*.bak
+venv
+.idea
+.vscode
+Cargo.lock

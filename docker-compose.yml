@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  wendell:
+    build: .
+    ports:
+      - "5001:5001"
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      RABBITMQ_USER: guest
+      RABBITMQ_PASSWORD: guest
+      WENDELL_ENVIRONMENT: production
+      WENDELL_JWT_SECRET: ${WENDELL_JWT_SECRET:-change-me-in-production}
+      WENDELL_ENCRYPTION_KEY: ${WENDELL_ENCRYPTION_KEY:-}
+      PORT: 5001
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    restart: unless-stopped
