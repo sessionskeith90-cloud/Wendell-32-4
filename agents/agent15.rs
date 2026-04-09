@@ -1,56 +1,29 @@
-use std::fs::{self, OpenOptions};
-use std::io::Write;
+// Updated agent15.rs
 
-fn main() {
-    println!("Agent 15 (Convergence Arbiter) is online.");
-
-    // Read the channel
-    let contents = fs::read_to_string("channel.txt")
-        .unwrap_or_else(|_| String::from(""));
-
-    // Default status
-    let mut status = "UNDECIDED";
-
-    // Stabilizing signals
-    let stabilizers = [
-        "OK",
-        "Verification status = OK",
-        "Harmonic status = OK",
-        "Resonance status = OK",
-        "Coherence status = OK",
-        "Provenance status = OK",
-        "Lattice status = OK",
-        "Fault status = OK",
-    ];
-
-    // Destabilizing signals
-    let destabilizers = [
-        "ANOMALY_DETECTED",
-        "DRIFT_DETECTED",
-        "LATTICE_INTEGRITY_FAILURE",
-        "FAULT_LINE_DETECTED",
-        "HARMONIC_INSTABILITY",
-        "RESONANCE_DETECTED",
-        "BROKEN_PROVENANCE_CHAIN",
-        "SHADOW_WITHOUT_PRIMARY",
-        "COHERENCE_BREAK",
-        "TEMPORAL_ORDER_VIOLATION",
-        "CLUSTER_DETECTED",
-        "LOW_ENTROPY",
-        "HIGH_ENTROPY",
-    ];
-
-    let mut stab_count = 0usize;
-    let mut destab_count = 0usize;
-
-    for s in stabilizers {
-        stab_count += contents.matches(s).count();
+fn process_agent(agent: &mut Agent) {
+    if agent.is_active() {
+        // Logic for active agent
+        handle_active_agent(agent);
+    } else if agent.is_suspended() {
+        // Logic for suspended agent
+        handle_suspended_agent(agent);
+    } else {
+        // Logic for inactive agents
+        handle_inactive_agent(agent);
     }
+}
 
-    for d in destabilizers {
-        destab_count += contents.matches(d).count();
-    }
+fn handle_active_agent(agent: &Agent) {
+    // Implementation for active agents
+    println!("Agent {} is active.", agent.id);
+}
 
-    if destab_count == 0 && stab_count > 0 {
-        status = "CONVERGING";
-    } else if destab_count
+fn handle_suspended_agent(agent: &Agent) {
+    // Implementation for suspended agents
+    println!("Agent {} is suspended.", agent.id);
+}
+
+fn handle_inactive_agent(agent: &Agent) {
+    // Implementation for inactive agents
+    println!("Agent {} is inactive.", agent.id);
+}
